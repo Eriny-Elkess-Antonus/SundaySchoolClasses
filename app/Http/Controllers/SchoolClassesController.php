@@ -18,11 +18,8 @@ class SchoolClassesController extends Controller
       
       
       $classes= SchoolClasses::all();
-        return view('all_classes')->with([
-            'sundayschoolclasses' =>$classes
-           
-        ]);
-       // ->with('sundayschoolclasses',$classes);
+        return view('all_classes',['sundayschoolclasses'=>$classes]);
+      
     }
 
     /**

@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/classes', [App\Http\Controllers\SchoolClassesController::class,'getallclasses'])->name('get.allclasses');
 Route::get('/class/create', [App\Http\Controllers\SchoolClassesController::class,'createClass'])->name('class.create');
-Route::get('/class/store', [App\Http\Controllers\SchoolClassesController::class,'storeClass'])->name('class.store');
+Route::post('/class/store', [App\Http\Controllers\SchoolClassesController::class,'storeClass'])->name('class.store');
 Route::get('/class/show', [App\Http\Controllers\SchoolClassesController::class,'showClass'])->name('class.show');
 //Route::get('/home', [App\Http\Controllers\SchoolClassesController::class,'index'])->name('home');
 // Route::get('/home', [App\Http\Controllers\SchoolClassesController::class,'index'])->name('home');
