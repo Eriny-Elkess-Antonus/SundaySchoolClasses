@@ -11,6 +11,8 @@
       </div>
     </div>
     </div>
+    
+    @if ($classes->count() > 0 )
 <div class="col">
 @foreach ($classes as $item)
 <div class="card text-center">
@@ -22,6 +24,17 @@
   
 </div>
 @endforeach
+
+@else
+       
+        <div class="col">
+            <div class="alert alert-danger" role="alert">
+              Not Classes Yet
+              </div>
+        </div>
+
+        @endif
+
 </div>
 
 
