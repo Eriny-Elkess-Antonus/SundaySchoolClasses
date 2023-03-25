@@ -4,24 +4,24 @@
 
 <div class="container">
  <div class="col">
-   <form action="{{route('class.store')}}" method="POST" enctype="multipart/form-data"> 
-    @csrf 
-    <div><h4> Add Name of Class</h4>
-   </div>
-   <div class="form-group">
-      <input type="text" class="form-control"  placeholder="class Name"  name= "class_name">
-           <label for="exampleFormControlInput1"></label>
+    <form action="{{route('SundaySchool.store')}}" method="POST" > 
+        @csrf 
+    
+   
+     <div class="form-group">
+      <label for="exampleFormControlInput1" > Add Name of Class</label>
+      <input type="text"  name="className" class="form-control"  placeholder="class Name" >
+ 
         </div>        
-         
-        <div><h4> Add Number of Students</h4></div>    
+             
         <div class="form-group">
-         <input type="number" class="form-control" name="number_of_students" placeholder="number of students">
-          <label for="exampleFormControlInput1"> </label>
-            </div>     
+         <label for="exampleFormControlInput1"> Add Number of Students</label>
+         <input type="text" name="numberOfStudents" class="form-control" name="numberOfStudents" placeholder="number of students">
+          </div>     
            
           <div class="form-group">
 
-            <button class="btn btn-danger"type="submit">save</button>
+            <button class="btn btn-danger" type="submit">save</button>
          </div>     
    </form>
  </div>

@@ -10,8 +10,8 @@ class SchoolClasses extends Model
     protected $table ='sundayschoolclasses';
     protected $primaryKey ='id';
     protected $fillable = [
-        'class_name',
-        'number_ofstudents',
+        'className',
+        'numberOfStudents',
     ];
 
     public function students()

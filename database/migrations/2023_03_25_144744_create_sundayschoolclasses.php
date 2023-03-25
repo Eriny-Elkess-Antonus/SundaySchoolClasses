@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSchoolClassesTable extends Migration
+class CreateSundayschoolclasses extends Migration
 {
     /**
      * Run the migrations.
@@ -15,8 +15,8 @@ class CreateSchoolClassesTable extends Migration
     {
         Schema::create('sundayschoolclasses', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('class_name');
-            $table->integer('number_of_students')->nullable();
+            $table->string('className');
+            $table->string('numberOfStudents');
             $table->timestamps();
         });
     }

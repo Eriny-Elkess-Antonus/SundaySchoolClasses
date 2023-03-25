@@ -1,12 +1,13 @@
 <?php
-
+namespace App\models;
 namespace App\Http\Controllers;
 
 use App\Models\SchoolClasses;
 use App\Models\SundaySchoolStudents;
 use Illuminate\Http\Request;
 
-class SchoolClassesController extends Controller
+
+class SundayStudentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +16,8 @@ class SchoolClassesController extends Controller
      */
     public function index()
     {
-      $classes= SchoolClasses::all();
-        return view('all_classes',compact('classes'));
-      
+        $students=SundaySchoolStudents::all();
+        return view('show_class_details',compact('students'));
     }
 
     /**
@@ -25,28 +25,10 @@ class SchoolClassesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createStudent()
     {
-        return view('create_class');
+        return view('create_student');
     }
-
-
-    public function store(Request $request)
-    {
-        
-        $this->validate($request,[
-            'className'=>'required',
-            'numberOfStudents'=>'required'
-        ]);
-        $class=SchoolClasses::create($request->all());
-        return redirect()->route('SundaySchool.index') ->with('success','class added successflly');
-    }
-
-    public function show( SchoolClasses $schoolClass)
-    {
-        return view('show_class_details',compact('schoolClass'));
-    }
-
     public function addStudent(Request $request )
     {
         $class =SchoolClasses::find($id); 
@@ -64,4 +46,6 @@ class SchoolClassesController extends Controller
     ]);
         return redirect()->back();
     }
+
+   
 }
