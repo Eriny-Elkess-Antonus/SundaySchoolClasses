@@ -19,7 +19,7 @@
   <div class="card-body">
     <h5 class="card-title"> {{$item->className}}</h5>
     <p class="card-text">{{$item->numberOfStudents}}</p>
-    <a href="{{route('SundaySchool.show',$item->id)}}" class="btn btn-primary">Show Students</a>
+    <a href="{{route('SundaySchool.show',$item->className)}}" class="btn btn-primary">Show Students</a>
   </div>
   
  </div>

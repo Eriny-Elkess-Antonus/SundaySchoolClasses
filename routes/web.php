@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SchoolClassesController;
-use App\Http\Controllers\SundayStudentsController;
+use App\Http\Controllers\SchoolStudentsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +17,7 @@ use App\Http\Controllers\SundayStudentsController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('/SundaySchool',SundayStudentsController::class);
-Route::get('/SundaySchoolStudents', [App\Http\Controllers\SundayStudentsController::class,'index'])->name('get.allStudents');
-Route::get('/SundaySchoolstusent/create', [App\Http\Controllers\SundayStudentsController::class,'createStudent'])->name('create.student');
-Route::post('/SundaySchoolstusent/Store', [App\Http\Controllers\SundayStudentsController::class,'addStudent'])->name('store.student');
+Route::resource('/SundaySchool',SchoolClassesController::class);
+Route::get('/SundaySchoolStudents/classes',[SchoolStudentsController::class,'index'])->name('get.allStudents');
+Route::get('/SundaySchoolstusent/create', [SchoolStudentsController::class,'create'])->name('create.student');
+Route::post('/SundaySchoolstusent/Store', [SchoolStudentsController::class,'store'])->name('store.student');

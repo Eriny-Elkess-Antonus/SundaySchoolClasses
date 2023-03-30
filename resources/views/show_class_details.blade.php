@@ -2,24 +2,22 @@
 
 @section('content')
  <div class="container">
- <div class="row">
+
       <div class="col">
       <div class="form-group">
-          <label for="exampleFormControlInput1"> {{$$class->className}}</label>
-         
+          <label for="exampleFormControlInput1"> {{ $schoolClass->className }}</label>
         </div>
         <div class="jumbotron">
             <h1 class="display-4" style="text-align: center">All Students  </h1>
+            
             <div class="row">
-            <a class="btn btn-success" href="{{route('create.student')}}"> Create Student</a>
-            <a class="btn btn-success" href="{{route('SundaySchool.index')}}"> back</a>
+            <a style="margin:5px" class="btn btn-success " href="{{route('create.student')}}"> Create Student</a>
+            <a style="margin:5px" class="btn btn-success" href="{{route('SundaySchool.index')}}"> back</a>
            </div>
            </div>
-      </div>
+      
     </div>
-
-    
-   @if ($students->count() > 0 )
+ @if ($students->count() > 0 )
  <<div class="container"> 
 <table class="table">
   <thead>
@@ -60,6 +58,7 @@
         @endif
 
 </div>
+
 
 @endsection
 

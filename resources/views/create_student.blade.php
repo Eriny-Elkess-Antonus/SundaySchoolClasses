@@ -20,7 +20,7 @@
           </div>    
 
      <fieldset data-role="controlgroup">
-      <legend>Choose your gender:</legend>
+      <legend>Choose  gender:</legend>
         <label for="male">Male</label>
         <input type="radio" name="gender"  value="male" checked>
         <label for="female">Female</label>

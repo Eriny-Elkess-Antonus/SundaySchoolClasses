@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\SchoolClasses;
-use App\Models\SundaySchoolStudents;
+use App\Models\schoolStudents;
 use Illuminate\Http\Request;
 
 class SchoolClassesController extends Controller
@@ -44,6 +44,7 @@ class SchoolClassesController extends Controller
 
     public function show( SchoolClasses $schoolClass)
     {
+       // $schoolClass = SchoolClasses::find($id); 
         return view('show_class_details',compact('schoolClass'));
     }
 
@@ -63,5 +64,12 @@ class SchoolClassesController extends Controller
     
     ]);
         return redirect()->back();
+    }
+
+    public function getStudentsbyClassId()
+    {
+        $id=SchoolClasses::id();
+        $students=schoolStudents::where('class_ID', "=" ,$id)->get;
+        return view('show_class_details',compact('students'));
     }
 }

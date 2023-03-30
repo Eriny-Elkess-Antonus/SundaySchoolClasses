@@ -16,6 +16,6 @@ class SchoolClasses extends Model
 
     public function students()
     {
-        return $this-> hasMany(SundaySchoolStudents::class);
+        return $this-> hasMany(schoolStudents::class);
     }
 }
